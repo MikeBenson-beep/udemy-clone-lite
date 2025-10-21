@@ -1,6 +1,6 @@
 import PromoBanner from "@/components/PromoBanner";
 import Header from "@/components/Header";
-import HeroCarousel from "@/components/HeroCarousel";
+import Hero from "@/components/Hero";
 import Categories from "@/components/Categories";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import TrustIndicators from "@/components/TrustIndicators";
@@ -12,7 +12,7 @@ const Index = () => {
       <PromoBanner />
       <Header />
       <main>
-        <HeroCarousel />
+        <Hero />
         <TrustIndicators />
         <Categories />
         <FeaturedCourses />
