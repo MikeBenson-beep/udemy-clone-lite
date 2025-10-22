@@ -2,6 +2,8 @@ import PromoBanner from "@/components/PromoBanner";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Categories from "@/components/Categories";
+import SkillsSection from "@/components/SkillsSection";
+import BusinessPlans from "@/components/BusinessPlans";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import TrustIndicators from "@/components/TrustIndicators";
 import Footer from "@/components/Footer";
@@ -15,6 +17,8 @@ const Index = () => {
         <Hero />
         <TrustIndicators />
         <Categories />
+        <SkillsSection />
+        <BusinessPlans />
         <FeaturedCourses />
       </main>
       <Footer />
