@@ -1,6 +1,7 @@
 import { Search, ShoppingCart, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,14 +9,17 @@ const Header = () => {
       <div className="max-w-[1440px] mx-auto px-6">
         <div className="flex items-center gap-6 h-[72px]">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             LOGO HERE
-          </a>
+          </Link>
 
           {/* Categories */}
-          <button className="text-sm font-medium text-foreground hover:text-primary transition-colors hidden lg:block">
+          <Link 
+            to="/dashboard/courses" 
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors hidden lg:block"
+          >
             Explorar
-          </button>
+          </Link>
 
           {/* Search */}
           <div className="flex-1 max-w-[750px] relative">

@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -78,13 +79,11 @@ const FeaturedCourses = () => {
         {/* Courses Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {courses.map((course, idx) => (
-            <Card 
-              key={idx} 
-              className="group cursor-pointer border hover:shadow-lg transition-all duration-300"
-            >
-              <div className="relative overflow-hidden aspect-video bg-muted">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20" />
-              </div>
+            <Link key={idx} to={`/lesson/${idx + 1}`}>
+              <Card className="group cursor-pointer border hover:shadow-lg transition-all duration-300">
+                <div className="relative overflow-hidden aspect-video bg-muted">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20" />
+                </div>
               <CardContent className="p-4 space-y-2">
                 <h3 className="font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
                   {course.title}
@@ -119,6 +118,7 @@ const FeaturedCourses = () => {
                 )}
               </CardFooter>
             </Card>
+            </Link>
           ))}
         </div>
 
