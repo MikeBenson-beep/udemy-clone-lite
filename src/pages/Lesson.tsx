@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { ChevronRight, Play, Pause, Volume2, BookOpen, CheckCircle2, Circle } from "lucide-react";
+import { useParams, useNavigate } from "react-router-dom";
+import { ChevronRight, Play, Pause, Volume2, BookOpen, CheckCircle2, Circle, FileText, HelpCircle, List, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -181,9 +181,11 @@ const mockCourse: Course = {
 
 const Lesson = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   // Get current section and lesson
   const currentModule = mockCourse.modules[0];
@@ -214,6 +216,34 @@ const Lesson = () => {
   const handleSectionSelect = (index: number) => {
     setCurrentSectionIndex(index);
     setIsPlaying(false);
+  };
+
+  const handleGenerateSlides = async () => {
+    setIsGenerating(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsGenerating(false);
+    // Here you would typically call an API to generate slides
+    console.log('Generating slides for lesson:', currentLesson.title);
+  };
+
+  const handleGenerateQuiz = async () => {
+    setIsGenerating(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsGenerating(false);
+    // Navigate to quiz page
+    navigate(`/lesson/${slug}/quiz`);
+  };
+
+  
+
+  const handleMarkAsCompleted = () => {
+    // Mark current section as completed
+    currentSection.completed = !currentSection.completed;
+    // Force re-render by updating state
+    setCurrentSectionIndex(currentSectionIndex);
+    console.log(`Section "${currentSection.title}" marked as ${currentSection.completed ? 'completed' : 'incomplete'}`);
   };
 
   return (
@@ -307,13 +337,47 @@ const Lesson = () => {
               <h1 className="text-3xl font-bold text-[#1c1d1f] mb-4">
                 {currentSection.title}
               </h1>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mb-6">
                 <Badge variant="outline" className="text-sm">
                   {currentSection.duration_minutes} minutos
                 </Badge>
                 <Badge variant="outline" className="text-sm">
                   Sección {currentSectionIndex + 1} de {totalSections}
                 </Badge>
+              </div>
+              
+              {/* Generation Buttons */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                <Button
+                  onClick={handleGenerateSlides}
+                  disabled={isGenerating}
+                  variant="outline"
+                  className="flex items-center gap-2"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  {isGenerating ? 'Generando...' : 'Generar Slides'}
+                </Button>
+                <Button
+                  onClick={handleGenerateQuiz}
+                  disabled={isGenerating}
+                  variant="outline"
+                  className="flex items-center gap-2"
+                >
+                  <HelpCircle className="h-4 w-4" />
+                  {isGenerating ? 'Generando...' : 'Generar Quiz'}
+                </Button>
+                <Button
+                  onClick={handleMarkAsCompleted}
+                  variant={currentSection.completed ? "default" : "outline"}
+                  className={`flex items-center gap-2 ${
+                    currentSection.completed 
+                      ? 'bg-green-600 hover:bg-green-700 text-white' 
+                      : 'border-green-600 text-green-600 hover:bg-green-50'
+                  }`}
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                  {currentSection.completed ? 'Marcada como completada' : 'Marcar como completada'}
+                </Button>
               </div>
             </div>
 
