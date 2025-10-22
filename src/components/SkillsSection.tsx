@@ -58,9 +58,9 @@ const SkillsSection = () => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div className="mb-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#1c1d1f] mb-3">
-            Skills to transform your career and life
+        <div className="mb-8 max-w-full overflow-visible">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#1c1d1f] mb-3 w-full">
+            Aprende habilidades esenciales para el trabajo y la vida
           </h2>
           <p className="text-lg text-[#6a6f73]">
             Desde habilidades esenciales hasta temas técnicos, Udemy respalda tu desarrollo profesional.
