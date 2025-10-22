@@ -88,7 +88,7 @@ const BusinessPlans = () => {
 
                   <Button 
                     variant={plan.buttonVariant}
-                    className="w-full mb-6 border-2 border-[#1c1d1f] text-[#1c1d1f] font-bold hover:bg-[#f7f9fa]"
+                    className="w-full mb-6 border border-[#1c1d1f] text-[#1c1d1f] font-bold hover:bg-[#f7f9fa]"
                   >
                     {plan.buttonText}
                   </Button>

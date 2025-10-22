@@ -130,7 +130,7 @@ const FeaturedCourses = () => {
           <p className="text-muted-foreground max-w-3xl mx-auto">
             Con más de 2,000 cursos de Python para todos los niveles, desde principiantes hasta profesionales, aprende análisis de datos, automatización, desarrollo web y más.
           </p>
-          <button className="px-6 py-3 border-2 border-foreground font-semibold text-foreground hover:bg-muted transition-colors rounded-md">
+          <button className="px-6 py-3 border border-foreground font-semibold text-foreground hover:bg-muted transition-colors rounded-md">
             Explorar Python
           </button>
         </div>

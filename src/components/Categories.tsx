@@ -98,7 +98,7 @@ const Categories = () => {
 
         {/* Carousel indicators */}
         <div className="flex justify-center gap-2 mt-8">
-          <div className="w-8 h-2 rounded-full bg-[#5624d0]"></div>
+          <div className="w-8 h-2 rounded-full bg-[#00b4d8]"></div>
           <div className="w-2 h-2 rounded-full bg-[#d1d7dc]"></div>
           <div className="w-2 h-2 rounded-full bg-[#d1d7dc]"></div>
         </div>

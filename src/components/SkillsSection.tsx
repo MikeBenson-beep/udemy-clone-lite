@@ -171,7 +171,7 @@ const SkillsSection = () => {
             <div className="mt-8">
               <a 
                 href="#" 
-                className="inline-flex items-center text-[#5624d0] font-bold text-base hover:text-[#401b9c] transition-colors"
+                className="inline-flex items-center text-[#00b4d8] font-bold text-base hover:text-[#401b9c] transition-colors"
               >
                 Mostrar todos los cursos de Inteligencia artificial (IA)
                 <ChevronRight className="ml-1 h-4 w-4" />

@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-woman.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-[#5624d0] via-[#5624d0] to-[#3b19a8] overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#00b4d8] via-[#00b4d8] to-[#3b19a8] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Content Box */}
@@ -25,7 +25,7 @@ const Hero = () => {
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="border-2 border-foreground font-bold px-8 h-12 bg-white hover:bg-muted"
+                  className="border border-foreground font-bold px-8 h-12 bg-white hover:bg-muted"
                 >
                   Aprende sobre IA
                 </Button>
