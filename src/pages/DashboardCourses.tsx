@@ -15,6 +15,13 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import courseImg1 from "@/assets/course-ai-1.jpg";
+import courseImg2 from "@/assets/course-ai-2.jpg";
+import courseImg3 from "@/assets/course-ai-3.jpg";
+import courseImg4 from "@/assets/course-ai-4.jpg";
+import categoryAI from "@/assets/category-ai.jpg";
+import categoryData from "@/assets/category-data.jpg";
+import categoryIT from "@/assets/category-it.jpg";
 
 // Course data structure
 interface Course {
@@ -42,7 +49,7 @@ const courses: Course[] = [
     price: "$84.99",
     originalPrice: "$109.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: courseImg1,
     category: "Desarrollo",
     subcategory: "Desarrollo Web",
     level: "Todos los niveles"
@@ -56,7 +63,7 @@ const courses: Course[] = [
     price: "$74.99",
     originalPrice: "$99.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryData,
     category: "Data Science",
     subcategory: "Machine Learning",
     level: "Intermedio"
@@ -70,7 +77,7 @@ const courses: Course[] = [
     price: "$79.99",
     originalPrice: "$94.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: courseImg2,
     category: "Desarrollo",
     subcategory: "JavaScript",
     level: "Principiante"
@@ -84,7 +91,7 @@ const courses: Course[] = [
     price: "$84.99",
     originalPrice: "$109.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryData,
     category: "Data Science",
     subcategory: "Python",
     level: "Todos los niveles"
@@ -98,7 +105,7 @@ const courses: Course[] = [
     price: "$89.99",
     originalPrice: "$119.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryIT,
     category: "TI y Software",
     subcategory: "Certificaciones",
     level: "Intermedio"
@@ -112,7 +119,7 @@ const courses: Course[] = [
     price: "$69.99",
     originalPrice: "$89.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: courseImg3,
     category: "Diseño",
     subcategory: "UX/UI Design",
     level: "Principiante"
@@ -126,7 +133,7 @@ const courses: Course[] = [
     price: "$79.99",
     originalPrice: "$99.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: courseImg1,
     category: "Desarrollo",
     subcategory: "JavaScript",
     level: "Intermedio"
@@ -140,7 +147,7 @@ const courses: Course[] = [
     price: "$94.99",
     originalPrice: "$129.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryAI,
     category: "Data Science",
     subcategory: "Deep Learning",
     level: "Avanzado"
@@ -154,7 +161,7 @@ const courses: Course[] = [
     price: "$74.99",
     originalPrice: "$94.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: courseImg4,
     category: "Marketing",
     subcategory: "Marketing Digital",
     level: "Todos los niveles"
@@ -168,7 +175,7 @@ const courses: Course[] = [
     price: "$84.99",
     originalPrice: "$109.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryIT,
     category: "TI y Software",
     subcategory: "DevOps",
     level: "Intermedio"
@@ -182,7 +189,7 @@ const courses: Course[] = [
     price: "$79.99",
     originalPrice: "$99.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: courseImg2,
     category: "Desarrollo",
     subcategory: "Desarrollo Móvil",
     level: "Principiante"
@@ -196,7 +203,7 @@ const courses: Course[] = [
     price: "$69.99",
     originalPrice: "$89.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryData,
     category: "Negocios",
     subcategory: "Excel",
     level: "Avanzado"
@@ -210,7 +217,7 @@ const courses: Course[] = [
     price: "$64.99",
     originalPrice: "$84.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: courseImg3,
     category: "Diseño",
     subcategory: "Herramientas de Diseño",
     level: "Principiante"
@@ -224,7 +231,7 @@ const courses: Course[] = [
     price: "$89.99",
     originalPrice: "$119.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: categoryIT,
     category: "TI y Software",
     subcategory: "Blockchain",
     level: "Intermedio"
@@ -238,7 +245,7 @@ const courses: Course[] = [
     price: "$74.99",
     originalPrice: "$94.99",
     bestseller: true,
-    image: "/placeholder.svg",
+    image: categoryData,
     category: "Data Science",
     subcategory: "Bases de Datos",
     level: "Principiante"
@@ -252,7 +259,7 @@ const courses: Course[] = [
     price: "$79.99",
     originalPrice: "$99.99",
     bestseller: false,
-    image: "/placeholder.svg",
+    image: courseImg4,
     category: "Marketing",
     subcategory: "Publicidad Digital",
     level: "Todos los niveles"
@@ -525,7 +532,11 @@ const DashboardCourses = () => {
                     <Link key={course.id} to={`/lesson/${course.id}`}>
                       <Card className="group cursor-pointer border border-border/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                         <div className="relative overflow-hidden aspect-video bg-secondary">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300" />
+                          <img 
+                            src={course.image} 
+                            alt={course.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
                         </div>
                         <CardContent className="p-5 space-y-3 flex-1 flex flex-col">
                           <h3 className="font-semibold text-foreground line-clamp-2 leading-snug group-hover:text-primary transition-colors">
