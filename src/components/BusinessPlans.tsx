@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Plan Team",
-    topColor: "bg-[#a435f0]",
+    topColor: "bg-primary",
     icon: Users,
     subtitle: "Entre 2 y 50 personas: para tu equipo",
     buttonText: "Probar gratis",
@@ -22,7 +22,7 @@ const plans = [
   },
   {
     name: "Plan Enterprise",
-    topColor: "bg-[#2d2f31]",
+    topColor: "bg-foreground",
     icon: Users,
     subtitle: "Más de 20 personas: para toda tu organización",
     buttonText: "Solicitar una demostración",
@@ -44,7 +44,7 @@ const plans = [
   },
   {
     name: "Dominio de la IA",
-    topColor: "bg-[#2d2f31]",
+    topColor: "bg-foreground",
     icon: Sparkles,
     subtitle: "De los fundamentos de la IA a la transformación empresarial",
     buttonText: "Ponte en contacto con nosotros",
@@ -57,13 +57,13 @@ const plans = [
 
 const BusinessPlans = () => {
   return (
-    <section className="py-16 bg-[#f7f9fa]">
+    <section className="py-16 bg-secondary">
       <div className="max-w-[1440px] mx-auto px-6">
         <div className="mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#1c1d1f] mb-3">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-3">
             Grow your team's skills and your business
           </h2>
-          <p className="text-lg text-[#6a6f73]">
+          <p className="text-lg text-muted-foreground">
             Reach goals faster with one of our plans or programs. Try one free today or contact sales to learn more.
           </p>
         </div>
@@ -72,34 +72,34 @@ const BusinessPlans = () => {
           {plans.map((plan, index) => {
             const Icon = plan.icon;
             return (
-              <Card key={index} className="overflow-hidden border-[#d1d7dc] shadow-sm">
+              <Card key={index} className="overflow-hidden border-border shadow-sm">
                 <div className={`h-2 ${plan.topColor}`}></div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#1c1d1f] mb-3">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
                     {plan.name}
                   </h3>
                   
                   <div className="flex items-start gap-2 mb-4">
-                    <Icon className="h-5 w-5 text-[#6a6f73] flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-[#6a6f73]">
+                    <Icon className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-muted-foreground">
                       {plan.subtitle}
                     </p>
                   </div>
 
                   <Button 
                     variant={plan.buttonVariant}
-                    className="w-full mb-6 border border-[#1c1d1f] text-[#1c1d1f] font-bold hover:bg-[#f7f9fa]"
+                    className="w-full mb-6 border border-foreground text-foreground font-bold hover:bg-secondary"
                   >
                     {plan.buttonText}
                   </Button>
 
                   {plan.pricing && (
                     <div className="mb-6">
-                      <p className="font-bold text-base text-[#1c1d1f] mb-1">
+                      <p className="font-bold text-base text-foreground mb-1">
                         {plan.pricing}
                       </p>
                       {plan.pricingNote && (
-                        <p className="text-xs text-[#6a6f73]">
+                        <p className="text-xs text-muted-foreground">
                           {plan.pricingNote}
                         </p>
                       )}
@@ -110,8 +110,8 @@ const BusinessPlans = () => {
                     <ul className="space-y-3">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-[#6a6f73] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#1c1d1f]">
+                          <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground">
                             {feature}
                           </span>
                         </li>
@@ -122,31 +122,31 @@ const BusinessPlans = () => {
                   {plan.name === "Dominio de la IA" && (
                     <div className="space-y-6">
                       <div>
-                        <h4 className="font-bold text-base text-[#1c1d1f] mb-2">
+                        <h4 className="font-bold text-base text-foreground mb-2">
                           Colección de preparación para utilizar la IA
                         </h4>
                         <div className="flex items-start gap-2 mb-2">
-                          <Users className="h-4 w-4 text-[#6a6f73] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#6a6f73]">
+                          <Users className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
                             Más de 100 personas
                           </span>
                         </div>
-                        <p className="text-sm text-[#1c1d1f]">
+                        <p className="text-sm text-foreground">
                           Fomenta el dominio de la IA en toda la organización con 50 cursos seleccionados y la herramienta AI Assistant para acelerar el aprendizaje.
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="font-bold text-base text-[#1c1d1f] mb-2">
+                        <h4 className="font-bold text-base text-foreground mb-2">
                           Colección de crecimiento gracias a la IA
                         </h4>
                         <div className="flex items-start gap-2 mb-2">
-                          <Users className="h-4 w-4 text-[#6a6f73] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#6a6f73]">
+                          <Users className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
                             Más de 20 personas
                           </span>
                         </div>
-                        <p className="text-sm text-[#1c1d1f]">
+                        <p className="text-sm text-foreground">
                           Escala los conocimientos técnicos y de IA con más de 800 cursos especializados y más de 30 vías de aprendizaje para puestos específicos en varios idiomas.
                         </p>
                       </div>

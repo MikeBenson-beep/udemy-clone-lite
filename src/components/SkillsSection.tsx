@@ -59,10 +59,10 @@ const SkillsSection = () => {
     <section className="py-16 bg-white">
       <div className="max-w-[1440px] mx-auto px-6">
         <div className="mb-8 max-w-full overflow-visible">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#1c1d1f] mb-3 w-full">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-3 w-full">
             Aprende habilidades esenciales para el trabajo y la vida
           </h2>
-          <p className="text-lg text-[#6a6f73]">
+          <p className="text-lg text-muted-foreground">
             Desde habilidades esenciales hasta temas técnicos, Udemy respalda tu desarrollo profesional.
           </p>
         </div>
@@ -71,37 +71,37 @@ const SkillsSection = () => {
           <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent mb-8">
             <TabsTrigger 
               value="ia"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-[#6a6f73] data-[state=active]:text-[#1c1d1f]"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
             >
               Inteligencia artificial (IA)
             </TabsTrigger>
             <TabsTrigger 
               value="python"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-[#6a6f73] data-[state=active]:text-[#1c1d1f]"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
             >
               Python
             </TabsTrigger>
             <TabsTrigger 
               value="excel"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-[#6a6f73] data-[state=active]:text-[#1c1d1f]"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
             >
               Microsoft Excel
             </TabsTrigger>
             <TabsTrigger 
               value="n8n"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-[#6a6f73] data-[state=active]:text-[#1c1d1f]"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
             >
               n8n
             </TabsTrigger>
             <TabsTrigger 
               value="ingles"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-[#6a6f73] data-[state=active]:text-[#1c1d1f]"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
             >
               Idioma inglés
             </TabsTrigger>
             <TabsTrigger 
               value="marketing"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-[#6a6f73] data-[state=active]:text-[#1c1d1f]"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
             >
               Marketing digital
             </TabsTrigger>
@@ -120,36 +120,36 @@ const SkillsSection = () => {
                       />
                     </div>
                     <div className="p-2">
-                      <h3 className="font-bold text-[15px] text-[#1c1d1f] mb-1 line-clamp-2 leading-tight">
+                      <h3 className="font-bold text-[15px] text-foreground mb-1 line-clamp-2 leading-tight">
                         {course.title}
                       </h3>
-                      <p className="text-xs text-[#6a6f73] mb-2">
+                      <p className="text-xs text-muted-foreground mb-2">
                         {course.instructor}
                       </p>
                       <div className="flex items-center gap-1 mb-2">
-                        <span className="font-bold text-sm text-[#1c1d1f]">
+                        <span className="font-bold text-sm text-foreground">
                           {course.rating}
                         </span>
                         <div className="flex gap-0.5">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-3 h-3 fill-[#f69c08] text-[#f69c08]" />
+                            <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
                           ))}
                         </div>
-                        <span className="text-xs text-[#6a6f73]">
+                        <span className="text-xs text-muted-foreground">
                           ({course.reviews} valoraciones)
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-base text-[#1c1d1f]">
+                        <span className="font-bold text-base text-foreground">
                           {course.price}
                         </span>
-                        <span className="text-sm text-[#6a6f73] line-through">
+                        <span className="text-sm text-muted-foreground line-through">
                           {course.originalPrice}
                         </span>
                       </div>
                       {course.bestseller && (
                         <div className="mt-2">
-                          <span className="inline-block bg-[#eceb98] text-[#3d3c0a] text-xs font-bold px-2 py-0.5">
+                          <span className="inline-block bg-yellow-100 text-yellow-900 text-xs font-bold px-2 py-0.5">
                             Lo más vendido
                           </span>
                         </div>
@@ -162,7 +162,7 @@ const SkillsSection = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute -right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#1c1d1f] hover:bg-[#1c1d1f]/90 text-white shadow-lg"
+                className="absolute -right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-foreground hover:bg-foreground/90 text-white shadow-lg"
               >
                 <ChevronRight className="h-6 w-6" />
               </Button>
@@ -171,7 +171,7 @@ const SkillsSection = () => {
             <div className="mt-8">
               <a 
                 href="#" 
-                className="inline-flex items-center text-[#00b4d8] font-bold text-base hover:text-[#401b9c] transition-colors"
+                className="inline-flex items-center text-primary font-bold text-base hover:text-primary/80 transition-colors"
               >
                 Mostrar todos los cursos de Inteligencia artificial (IA)
                 <ChevronRight className="ml-1 h-4 w-4" />
@@ -180,23 +180,23 @@ const SkillsSection = () => {
           </TabsContent>
 
           <TabsContent value="python">
-            <p className="text-[#6a6f73]">Cursos de Python próximamente...</p>
+            <p className="text-muted-foreground">Cursos de Python próximamente...</p>
           </TabsContent>
           
           <TabsContent value="excel">
-            <p className="text-[#6a6f73]">Cursos de Microsoft Excel próximamente...</p>
+            <p className="text-muted-foreground">Cursos de Microsoft Excel próximamente...</p>
           </TabsContent>
           
           <TabsContent value="n8n">
-            <p className="text-[#6a6f73]">Cursos de n8n próximamente...</p>
+            <p className="text-muted-foreground">Cursos de n8n próximamente...</p>
           </TabsContent>
           
           <TabsContent value="ingles">
-            <p className="text-[#6a6f73]">Cursos de inglés próximamente...</p>
+            <p className="text-muted-foreground">Cursos de inglés próximamente...</p>
           </TabsContent>
           
           <TabsContent value="marketing">
-            <p className="text-[#6a6f73]">Cursos de marketing digital próximamente...</p>
+            <p className="text-muted-foreground">Cursos de marketing digital próximamente...</p>
           </TabsContent>
         </Tabs>
       </div>

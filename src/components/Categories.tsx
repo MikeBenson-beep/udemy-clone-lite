@@ -25,15 +25,15 @@ const categories = [
 
 const Categories = () => {
   return (
-    <section className="py-16 bg-[#f7f9fa]">
+    <section className="py-16 bg-secondary">
       <div className="max-w-[1440px] mx-auto px-6">
-        <div className="grid lg:grid-cols-[400px_1fr] gap-12 items-center">
+        <div className="grid lg:grid-cols-[minmax(300px,_400px)_1fr] gap-12 items-center">
           {/* Left content */}
-          <div className="space-y-4">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1c1d1f]">
+          <div className="space-y-4 max-w-full">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground break-words">
               Aprende habilidades esenciales para el trabajo y la vida
             </h2>
-            <p className="text-base text-[#6a6f73]">
+            <p className="text-sm sm:text-base text-muted-foreground break-words">
               Udemy te ayuda a desarrollar rápidamente habilidades demandadas para impulsar tu carrera profesional en el cambiante mercado laboral.
             </p>
           </div>
@@ -58,15 +58,15 @@ const Categories = () => {
                     
                     {/* Content */}
                     <div className="bg-white p-4">
-                      <div className="flex items-center gap-2 text-sm text-[#6a6f73] mb-2">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                         <Users className="h-4 w-4" />
                         <span className="font-bold">{category.students}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-bold text-[#1c1d1f] group-hover:text-primary transition-colors">
+                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                           {category.title}
                         </h3>
-                        <ArrowRight className="h-5 w-5 text-[#1c1d1f] group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="h-5 w-5 text-foreground group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ const Categories = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="h-12 w-12 rounded-full bg-[#1c1d1f] border-[#1c1d1f] hover:bg-[#1c1d1f]/90 shadow-lg"
+                className="h-12 w-12 rounded-full bg-foreground border-foreground hover:bg-foreground/90 shadow-lg"
               >
                 <ChevronLeft className="h-6 w-6 text-white" />
               </Button>
@@ -88,7 +88,7 @@ const Categories = () => {
               <Button
                 variant="outline"
                 size="icon"
-                className="h-12 w-12 rounded-full bg-[#1c1d1f] border-[#1c1d1f] hover:bg-[#1c1d1f]/90 shadow-lg"
+                className="h-12 w-12 rounded-full bg-foreground border-foreground hover:bg-foreground/90 shadow-lg"
               >
                 <ChevronRight className="h-6 w-6 text-white" />
               </Button>
@@ -98,9 +98,9 @@ const Categories = () => {
 
         {/* Carousel indicators */}
         <div className="flex justify-center gap-2 mt-8">
-          <div className="w-8 h-2 rounded-full bg-[#00b4d8]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#d1d7dc]"></div>
-          <div className="w-2 h-2 rounded-full bg-[#d1d7dc]"></div>
+          <div className="w-8 h-2 rounded-full bg-primary"></div>
+          <div className="w-2 h-2 rounded-full bg-muted"></div>
+          <div className="w-2 h-2 rounded-full bg-muted"></div>
         </div>
       </div>
     </section>

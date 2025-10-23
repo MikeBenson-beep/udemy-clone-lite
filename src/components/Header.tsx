@@ -10,7 +10,11 @@ const Header = () => {
         <div className="flex items-center gap-6 h-[72px]">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            LOGO HERE
+            <img 
+              src="/didactiqo_logo.png" 
+              alt="Didactiqo" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Categories */}

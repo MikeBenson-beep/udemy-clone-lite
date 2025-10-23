@@ -8,58 +8,68 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Primary Background - #FFFFFF Pure white */
     --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
+    /* Text Primary - #0F0F0F Deep neutral black */
+    --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
+    --card-foreground: 0 0% 6%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
+    --popover-foreground: 0 0% 6%;
 
-    --primary: 194 100% 42%;
+    /* Accent/CTA - #007AFF Vibrant but classy blue */
+    --primary: 211 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220 8.9% 46.1%;
+    /* Secondary Background - #F5F6F7 Subtle cool gray */
+    --secondary: 210 9% 97%;
+    --secondary-foreground: 0 0% 6%;
 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted: 210 9% 97%;
+    /* Text Secondary - #6E6E6E Muted gray for subtitles */
+    --muted-foreground: 0 0% 43%;
 
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220 8.9% 46.1%;
+    --accent: 211 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    /* Error - #FF3B30 Soft red */
+    --destructive: 3 100% 59%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262 83% 58%;
+    /* Success - #34C759 Apple green */
+    --success: 135 59% 49%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 210 9% 91%;
+    --input: 210 9% 91%;
+    --ring: 211 100% 50%;
 
     --radius: 0.5rem;
     
-    --hero-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(220 100% 66%));
+    --hero-gradient: linear-gradient(135deg, hsl(211 100% 50%), hsl(211 100% 60%));
     --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     --card-shadow-hover: 0 10px 25px -5px rgb(0 0 0 / 0.1);
     
-    --promo-bg: 189 92% 85%;
-    --promo-text: 189 92% 25%;
+    --promo-bg: 211 100% 95%;
+    --promo-text: 211 100% 30%;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 210 9% 97%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 0 0% 6%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 211 100% 50%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 210 9% 97%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 0 0% 6%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 210 9% 91%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 211 100% 50%;
   }
 
   .dark {

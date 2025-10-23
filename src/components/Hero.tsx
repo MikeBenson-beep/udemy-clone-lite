@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-woman.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-[#00b4d8] via-[#00b4d8] to-[#3b19a8] overflow-hidden">
+    <section className="relative bg-gradient-to-br from-primary via-primary to-primary/80 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Content Box */}
@@ -47,9 +47,9 @@ const Hero = () => {
       {/* Decorative Background Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large organic shapes */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#7c4dff]/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#00bcd4]/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-[#e1bee7]/20 rounded-full blur-2xl" />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/30 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-primary/20 rounded-full blur-2xl" />
       </div>
     </section>
   );

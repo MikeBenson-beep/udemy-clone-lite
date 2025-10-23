@@ -1,10 +1,5 @@
 const TrustIndicators = () => {
-  const stats = [
-    { number: "73M+", label: "Estudiantes" },
-    { number: "210,000+", label: "Cursos" },
-    { number: "75+", label: "Idiomas" },
-    { number: "1B+", label: "Inscripciones" }
-  ];
+  const stats = [];
 
   return (
     <section className="py-12 bg-muted/30">
