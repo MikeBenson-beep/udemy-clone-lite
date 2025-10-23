@@ -56,58 +56,60 @@ const courses = [
 
 const SkillsSection = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-[1440px] mx-auto px-6">
-        <div className="mb-8 max-w-full overflow-visible">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-3 w-full">
+    <section className="py-8 sm:py-12 lg:py-16 bg-white overflow-hidden">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="mb-6 sm:mb-8 max-w-full text-center sm:text-left px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2 sm:mb-3 w-full">
             Aprende habilidades esenciales para el trabajo y la vida
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground">
             Desde habilidades esenciales hasta temas técnicos, Udemy respalda tu desarrollo profesional.
           </p>
         </div>
 
         <Tabs defaultValue="ia" className="w-full">
-          <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent mb-8">
-            <TabsTrigger 
-              value="ia"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
-            >
-              Inteligencia artificial (IA)
-            </TabsTrigger>
-            <TabsTrigger 
-              value="python"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
-            >
-              Python
-            </TabsTrigger>
-            <TabsTrigger 
-              value="excel"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
-            >
-              Microsoft Excel
-            </TabsTrigger>
+          <div className="overflow-x-auto">
+            <TabsList className="justify-start border-b rounded-none h-auto p-0 bg-transparent mb-6 sm:mb-8 flex-nowrap inline-flex min-w-0 px-4 sm:px-6">
+              <TabsTrigger 
+                value="ia"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-foreground whitespace-nowrap"
+              >
+                IA
+              </TabsTrigger>
+              <TabsTrigger 
+                value="python"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-foreground whitespace-nowrap"
+              >
+                Python
+              </TabsTrigger>
+              <TabsTrigger 
+                value="excel"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-foreground whitespace-nowrap"
+              >
+                Excel
+              </TabsTrigger>
             <TabsTrigger 
               value="n8n"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-foreground whitespace-nowrap"
             >
               n8n
             </TabsTrigger>
             <TabsTrigger 
               value="ingles"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-foreground whitespace-nowrap"
             >
-              Idioma inglés
+              Inglés
             </TabsTrigger>
             <TabsTrigger 
               value="marketing"
-              className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#1c1d1f] data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-3 text-base font-bold text-muted-foreground data-[state=active]:text-foreground"
+              className="rounded-none border-b-2 border-transparent data-[state=active]:border-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-bold text-muted-foreground data-[state=active]:text-foreground whitespace-nowrap"
             >
-              Marketing digital
+              Marketing
             </TabsTrigger>
           </TabsList>
+          </div>
 
-          <TabsContent value="ia" className="mt-0">
+          <TabsContent value="ia" className="mt-0 px-4 sm:px-6">
             <div className="relative">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {courses.map((course) => (
@@ -179,23 +181,23 @@ const SkillsSection = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="python">
+          <TabsContent value="python" className="px-4 sm:px-6">
             <p className="text-muted-foreground">Cursos de Python próximamente...</p>
           </TabsContent>
-          
-          <TabsContent value="excel">
+
+          <TabsContent value="excel" className="px-4 sm:px-6">
             <p className="text-muted-foreground">Cursos de Microsoft Excel próximamente...</p>
           </TabsContent>
-          
-          <TabsContent value="n8n">
+
+          <TabsContent value="n8n" className="px-4 sm:px-6">
             <p className="text-muted-foreground">Cursos de n8n próximamente...</p>
           </TabsContent>
-          
-          <TabsContent value="ingles">
+
+          <TabsContent value="ingles" className="px-4 sm:px-6">
             <p className="text-muted-foreground">Cursos de inglés próximamente...</p>
           </TabsContent>
-          
-          <TabsContent value="marketing">
+
+          <TabsContent value="marketing" className="px-4 sm:px-6">
             <p className="text-muted-foreground">Cursos de marketing digital próximamente...</p>
           </TabsContent>
         </Tabs>

@@ -3,30 +3,30 @@ import { Button } from "@/components/ui/button";
 
 const PopularSkills = () => {
   return (
-    <section className="py-16 bg-secondary">
-      <div className="max-w-[1440px] mx-auto px-6">
-        <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 pb-6 border-b border-border">
+    <section className="py-8 sm:py-12 lg:py-16 bg-secondary">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-border text-center sm:text-left">
           Popular Skills
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Left Column - Featured Skill */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
               ChatGPT is a top skill
             </h3>
             <a 
               href="#" 
-              className="inline-flex items-center text-primary font-bold text-base hover:text-primary/80 transition-colors mb-2"
+              className="inline-flex items-center text-primary font-bold text-sm sm:text-base hover:text-primary/80 transition-colors mb-2"
             >
               See ChatGPT courses
               <ChevronRight className="ml-1 h-4 w-4" />
             </a>
-            <p className="text-sm text-muted-foreground">5.134.263 learners</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">5.134.263 learners</p>
 
             <Button
               variant="outline"
-              className="mt-8 w-full border-foreground text-foreground font-bold hover:bg-secondary"
+              className="mt-6 sm:mt-8 w-full border-foreground text-foreground font-bold hover:bg-secondary text-sm"
             >
               Show all trending skills
               <ChevronRight className="ml-2 h-4 w-4" />
@@ -35,7 +35,7 @@ const PopularSkills = () => {
 
           {/* Development Column */}
           <div className="lg:col-span-1">
-            <h3 className="text-xl font-bold text-foreground mb-6">Desarrollo</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">Desarrollo</h3>
             <div className="space-y-4">
               <div>
                 <a 
