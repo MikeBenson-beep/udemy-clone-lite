@@ -339,26 +339,13 @@ const DashboardCourses = () => {
       <Header />
       
       <main className="bg-background">
-        {/* Header Section */}
-        <div className="bg-[#f7f9fa] border-b">
-          <div className="max-w-[1440px] mx-auto px-6 py-8">
-            <h1 className="text-3xl font-bold text-[#1c1d1f] mb-2">
-              Todos los cursos
-            </h1>
-            <p className="text-lg text-[#6a6f73]">
-              {sortedCourses.length} {sortedCourses.length === 1 ? 'curso' : 'cursos'}
-            </p>
-          </div>
-        </div>
-
-        <div className="max-w-[1440px] mx-auto px-6 py-8">
-          <div className="flex gap-8">
+        <div className="max-w-[1440px] mx-auto px-6 py-12">
+          <div className="flex gap-12">
             {/* Filters Sidebar */}
-            <aside className={`${showFilters ? 'w-80' : 'w-0'} flex-shrink-0 transition-all duration-300 overflow-hidden`}>
-              <div className="sticky top-24 space-y-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-lg font-bold text-[#1c1d1f] flex items-center gap-2">
-                    <Filter className="h-5 w-5" />
+            <aside className={`${showFilters ? 'w-64' : 'w-0'} flex-shrink-0 transition-all duration-300 overflow-hidden`}>
+              <div className="sticky top-24 space-y-8">
+                <div className="flex items-center justify-between mb-2">
+                  <h2 className="text-lg font-semibold text-foreground">
                     Filtros
                   </h2>
                   {hasActiveFilters && (
@@ -366,27 +353,28 @@ const DashboardCourses = () => {
                       variant="ghost"
                       size="sm"
                       onClick={clearAllFilters}
-                      className="text-primary hover:text-primary/80"
+                      className="text-primary hover:text-primary/80 h-8 text-sm"
                     >
-                      Limpiar todo
+                      Limpiar
                     </Button>
                   )}
                 </div>
 
                 {/* Categories Filter */}
-                <div className="border-b pb-6">
-                  <h3 className="font-bold text-[#1c1d1f] mb-4">Categorías</h3>
-                  <div className="space-y-3">
+                <div className="pb-6">
+                  <h3 className="font-medium text-foreground mb-4 text-sm">Categorías</h3>
+                  <div className="space-y-2.5">
                     {categories.map(category => (
-                      <div key={category} className="flex items-center space-x-2">
+                      <div key={category} className="flex items-center space-x-2.5">
                         <Checkbox
                           id={`category-${category}`}
                           checked={selectedCategories.includes(category)}
                           onCheckedChange={() => toggleCategory(category)}
+                          className="rounded-sm"
                         />
                         <Label
                           htmlFor={`category-${category}`}
-                          className="text-sm text-[#1c1d1f] cursor-pointer hover:text-primary transition-colors"
+                          className="text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors font-normal"
                         >
                           {category}
                         </Label>
@@ -396,19 +384,20 @@ const DashboardCourses = () => {
                 </div>
 
                 {/* Subcategories Filter */}
-                <div className="border-b pb-6">
-                  <h3 className="font-bold text-[#1c1d1f] mb-4">Subcategorías</h3>
-                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                <div className="pb-6">
+                  <h3 className="font-medium text-foreground mb-4 text-sm">Subcategorías</h3>
+                  <div className="space-y-2.5 max-h-64 overflow-y-auto pr-2">
                     {availableSubcategories.map(subcategory => (
-                      <div key={subcategory} className="flex items-center space-x-2">
+                      <div key={subcategory} className="flex items-center space-x-2.5">
                         <Checkbox
                           id={`subcategory-${subcategory}`}
                           checked={selectedSubcategories.includes(subcategory)}
                           onCheckedChange={() => toggleSubcategory(subcategory)}
+                          className="rounded-sm"
                         />
                         <Label
                           htmlFor={`subcategory-${subcategory}`}
-                          className="text-sm text-[#1c1d1f] cursor-pointer hover:text-primary transition-colors"
+                          className="text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors font-normal"
                         >
                           {subcategory}
                         </Label>
@@ -418,19 +407,20 @@ const DashboardCourses = () => {
                 </div>
 
                 {/* Level Filter */}
-                <div className="border-b pb-6">
-                  <h3 className="font-bold text-[#1c1d1f] mb-4">Nivel</h3>
-                  <div className="space-y-3">
+                <div className="pb-6">
+                  <h3 className="font-medium text-foreground mb-4 text-sm">Nivel</h3>
+                  <div className="space-y-2.5">
                     {levels.map(level => (
-                      <div key={level} className="flex items-center space-x-2">
+                      <div key={level} className="flex items-center space-x-2.5">
                         <Checkbox
                           id={`level-${level}`}
                           checked={selectedLevels.includes(level)}
                           onCheckedChange={() => toggleLevel(level)}
+                          className="rounded-sm"
                         />
                         <Label
                           htmlFor={`level-${level}`}
-                          className="text-sm text-[#1c1d1f] cursor-pointer hover:text-primary transition-colors"
+                          className="text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors font-normal"
                         >
                           {level}
                         </Label>
@@ -441,40 +431,39 @@ const DashboardCourses = () => {
 
                 {/* Active Filters */}
                 {hasActiveFilters && (
-                  <div className="space-y-2">
-                    <h3 className="font-bold text-[#1c1d1f] mb-3">Filtros activos</h3>
+                  <div className="space-y-3 pt-2">
                     <div className="flex flex-wrap gap-2">
                       {selectedCategories.map(cat => (
                         <Badge
                           key={cat}
                           variant="secondary"
-                          className="cursor-pointer hover:bg-secondary/80"
+                          className="cursor-pointer hover:bg-foreground hover:text-background transition-colors text-xs"
                           onClick={() => toggleCategory(cat)}
                         >
                           {cat}
-                          <X className="ml-1 h-3 w-3" />
+                          <X className="ml-1.5 h-3 w-3" />
                         </Badge>
                       ))}
                       {selectedSubcategories.map(sub => (
                         <Badge
                           key={sub}
                           variant="secondary"
-                          className="cursor-pointer hover:bg-secondary/80"
+                          className="cursor-pointer hover:bg-foreground hover:text-background transition-colors text-xs"
                           onClick={() => toggleSubcategory(sub)}
                         >
                           {sub}
-                          <X className="ml-1 h-3 w-3" />
+                          <X className="ml-1.5 h-3 w-3" />
                         </Badge>
                       ))}
                       {selectedLevels.map(level => (
                         <Badge
                           key={level}
                           variant="secondary"
-                          className="cursor-pointer hover:bg-secondary/80"
+                          className="cursor-pointer hover:bg-foreground hover:text-background transition-colors text-xs"
                           onClick={() => toggleLevel(level)}
                         >
                           {level}
-                          <X className="ml-1 h-3 w-3" />
+                          <X className="ml-1.5 h-3 w-3" />
                         </Badge>
                       ))}
                     </div>
@@ -484,93 +473,97 @@ const DashboardCourses = () => {
             </aside>
 
             {/* Main Content */}
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               {/* Controls */}
-              <div className="flex items-center justify-between mb-6">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="lg:hidden"
-                >
-                  <Filter className="h-4 w-4 mr-2" />
-                  {showFilters ? 'Ocultar' : 'Mostrar'} filtros
-                </Button>
-                
-                <div className="flex items-center gap-4 ml-auto">
-                  <span className="text-sm text-[#6a6f73]">Ordenar por:</span>
-                  <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-[180px]">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="relevance">Más relevantes</SelectItem>
-                      <SelectItem value="rating">Mejor valorados</SelectItem>
-                      <SelectItem value="reviews">Más reseñas</SelectItem>
-                      <SelectItem value="price-low">Precio: menor a mayor</SelectItem>
-                      <SelectItem value="price-high">Precio: mayor a menor</SelectItem>
-                    </SelectContent>
-                  </Select>
+              <div className="flex items-center justify-between mb-10 gap-4 flex-wrap">
+                <div className="flex items-center gap-4">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowFilters(!showFilters)}
+                    className="lg:hidden text-muted-foreground hover:text-foreground"
+                  >
+                    {showFilters ? 'Ocultar' : 'Mostrar'} filtros
+                  </Button>
+                  <span className="text-sm text-muted-foreground">
+                    {sortedCourses.length} {sortedCourses.length === 1 ? 'curso' : 'cursos'}
+                  </span>
                 </div>
+                
+                <Select value={sortBy} onValueChange={setSortBy}>
+                  <SelectTrigger className="w-[200px] border-border/50 text-sm">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="relevance">Más relevantes</SelectItem>
+                    <SelectItem value="rating">Mejor valorados</SelectItem>
+                    <SelectItem value="reviews">Más reseñas</SelectItem>
+                    <SelectItem value="price-low">Precio: menor a mayor</SelectItem>
+                    <SelectItem value="price-high">Precio: mayor a menor</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               {/* Courses Grid */}
               {sortedCourses.length === 0 ? (
-                <div className="text-center py-16">
-                  <p className="text-lg text-[#6a6f73] mb-4">
-                    No se encontraron cursos con los filtros seleccionados
-                  </p>
-                  <Button onClick={clearAllFilters}>
-                    Limpiar filtros
-                  </Button>
+                <div className="text-center py-20">
+                  <div className="max-w-md mx-auto">
+                    <p className="text-xl text-foreground mb-2 font-medium">
+                      No se encontraron cursos
+                    </p>
+                    <p className="text-sm text-muted-foreground mb-8">
+                      Intenta ajustar tus filtros para ver más resultados
+                    </p>
+                    <Button onClick={clearAllFilters} variant="outline">
+                      Limpiar filtros
+                    </Button>
+                  </div>
                 </div>
               ) : (
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {sortedCourses.map((course) => (
                     <Link key={course.id} to={`/lesson/${course.id}`}>
-                      <Card className="group cursor-pointer border hover:shadow-lg transition-all duration-300">
-                        <div className="relative overflow-hidden aspect-video bg-muted">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20" />
+                      <Card className="group cursor-pointer border border-border/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                        <div className="relative overflow-hidden aspect-video bg-secondary">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300" />
                         </div>
-                        <CardContent className="p-4 space-y-2">
-                          <h3 className="font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                        <CardContent className="p-5 space-y-3 flex-1 flex flex-col">
+                          <h3 className="font-semibold text-foreground line-clamp-2 leading-snug group-hover:text-primary transition-colors">
                             {course.title}
                           </h3>
-                        <p className="text-sm text-muted-foreground">{course.instructor}</p>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-foreground">{course.rating}</span>
-                          <div className="flex">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`h-3 w-3 ${
-                                  i < Math.floor(course.rating)
-                                    ? "fill-yellow-400 text-yellow-400"
-                                    : "text-muted"
-                                }`}
-                              />
-                            ))}
+                          <p className="text-sm text-muted-foreground">{course.instructor}</p>
+                          <div className="flex items-center gap-2 mt-auto">
+                            <span className="font-bold text-foreground text-sm">{course.rating}</span>
+                            <div className="flex gap-0.5">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`h-3.5 w-3.5 ${
+                                    i < Math.floor(course.rating)
+                                      ? "fill-yellow-400 text-yellow-400"
+                                      : "fill-muted text-muted"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <span className="text-xs text-muted-foreground">({course.reviews})</span>
                           </div>
-                          <span className="text-xs text-muted-foreground">({course.reviews})</span>
-                        </div>
-                        <div className="flex flex-wrap gap-1 pt-2">
-                          <Badge variant="outline" className="text-xs">
+                          <Badge variant="outline" className="text-xs w-fit border-border/50">
                             {course.level}
                           </Badge>
-                        </div>
-                      </CardContent>
-                      <CardFooter className="p-4 pt-0 flex items-center gap-2">
-                        <span className="text-lg font-bold text-foreground">{course.price}</span>
-                        <span className="text-sm text-muted-foreground line-through">
-                          {course.originalPrice}
-                        </span>
-                        {course.bestseller && (
-                          <Badge className="ml-auto bg-yellow-100 text-yellow-800 hover:bg-yellow-100">
-                            Bestseller
-                          </Badge>
-                        )}
-                      </CardFooter>
-                    </Card>
+                        </CardContent>
+                        <CardFooter className="p-5 pt-0 flex items-center gap-2 border-t border-border/30">
+                          <span className="text-xl font-bold text-foreground">{course.price}</span>
+                          <span className="text-sm text-muted-foreground line-through">
+                            {course.originalPrice}
+                          </span>
+                          {course.bestseller && (
+                            <Badge className="ml-auto bg-yellow-100 text-yellow-800 hover:bg-yellow-100 border-0">
+                              Bestseller
+                            </Badge>
+                          )}
+                        </CardFooter>
+                      </Card>
                     </Link>
                   ))}
                 </div>
